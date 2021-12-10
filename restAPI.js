@@ -1,6 +1,7 @@
 
 var express = require('express');
 var app = express();
+const port = process.env.PORT || 5000;
 
 var api_routes = require("./api_routes.js");
 
@@ -13,6 +14,6 @@ app.get('/home',(req,res) =>{
   res.render('homepage');
 });
 
-app.listen(3000, function(){
+app.listen(port, function(){
   console.log("Server Running");
 })
