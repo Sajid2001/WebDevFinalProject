@@ -4,10 +4,12 @@ var updateView = async(button) => {
     case 'by_instructor':
       console.log(button.dataset.querytype);
       let queryName = document.querySelector("#instructorQuery").value;
+      //api = `http://localhost:5000/api/by_instructor/${queryName}`;
       api = `https://course-query-project.herokuapp.com/api/by_instructor/${queryName}`;
       break;
     case 'by_code':
       let queryCode = document.querySelector("#codeQuery").value;
+      //api = `http://localhost:5000/api/by_course_code/${queryCode}`;
       api = `https://course-query-project.herokuapp.com/api/by_course_code/${queryCode}`;
       break;
     case 'by_level':
@@ -19,6 +21,7 @@ var updateView = async(button) => {
                 queryLevel = choice.value;
               }
             }
+      //api = `http://localhost:5000/api/by_level/${queryLevel}`
       api = `https://course-query-project.herokuapp.com/api/by_level/${queryLevel}`;
       break;
     case 'dual_query':
@@ -34,6 +37,7 @@ var updateView = async(button) => {
                   break;
                 }
               }
+              //api = `http://localhost:5000/api/combined_query/${dual_queryName}/${dual_queryLevel}`
               api = `https://course-query-project.herokuapp.com/api/combined_query/${dual_queryName}/${dual_queryLevel}`;
         break;
 
